@@ -1,0 +1,36 @@
+<div class="new-card-container">
+  <!--Header-->
+  <div class="modal-header">
+    <h3 class="modal-title">New Card</h3>
+  </div>
+
+  <!--Body-->
+  <div class="modal-body">
+
+    <!--Full Name-->
+    <div>
+      <label class="input-label">Full Name</label>
+      <input type="text" ng-model="newCard.card.fullName" placeholder="Enter full name">
+    </div>
+
+    <!--Short Title-->
+    <div>
+      <label class="input-label">Short Title</label>
+      <input type="text" ng-model="newCard.card.shortTitle" placeholder="Enter short title">
+    </div>
+
+    <!--Quote-->
+    <div>
+      <label class="input-label">Quote</label>
+      <input type="text" ng-model="newCard.card.quote" placeholder="Enter quote">
+    </div>
+
+  </div>
+
+  <!--Footer Buttons-->
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="newCard.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="newCard.cancel()">Cancel</button>
+  </div>
+
+</div>

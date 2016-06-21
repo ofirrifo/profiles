@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div ng-repeat="card in profileCard.cards track by card._id" class="col-md-3">
+      <div class="panel widget">
+
+        <!--Image-->
+        <div class="panel-body text-center bg-center">
+          <div class="row row-table">
+            <div class="col-xs-12 text-white">
+              <img ng-src="{{:: card.imgSrc}}" alt="Image" class="img-thumbnail img-circle thumb128">
+              <h3>{{:: card.fullName}}</h3>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="list-group">
+
+          <!--Inbox-->
+          <a href="{{'#/inbox/' + card.id}}" class="list-group-item">
+            <i class="glyphicon glyphicon-envelope"></i>
+            <em class="fa fa-fw fa-clock-o text-muted"></em>Inbox
+          </a>
+
+          <!--Short Title-->
+          <div class="list-group-item">
+            {{:: card.shortTitle}}
+          </div>
+
+          <!--Quote-->
+          <div class="list-group-item">
+            {{:: card.quote}}
+          </div>
+
+          <!--Number Of Friends-->
+          <div class="list-group-item">
+            <span class="label label-danger pull-right">{{::  card.numberOfFriends}}</span>
+            <em class="fa fa-fw fa-folder-open-o text-muted"></em>Friends
+          </div>
+
+          <div class="list-group-item card-like">
+            <a ng-click="profileCard.onLikeClick(card)">
+              <i class="glyphicon glyphicon-thumbs-up"></i>
+            </a>
+            <span>{{card.totalLikes}}</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="card-footer">
+  <button type="button" class="btn btn-default" ng-click="profileCard.onAddContactClick()">
+    Add Contact
+  </button>
+</footer>

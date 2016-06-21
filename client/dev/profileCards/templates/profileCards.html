@@ -1,4 +1,5 @@
-<div class="container">
+<!--Cards-->
+<div class="container" ng-if="profileCard.cards.length > 0">
   <div class="row">
     <div ng-repeat="card in profileCard.cards track by card._id" class="col-md-3">
       <div class="panel widget">
@@ -51,8 +52,15 @@
   </div>
 </div>
 
+<!--Empty Cards Text-->
+<h1 ng-if="profileCard.cards.length === 0" class="empty-cards">
+  Click on the Add Card button below to create new Card
+</h1>
+
+<!--Footer Buttons-->
 <footer class="card-footer">
-  <button type="button" class="btn btn-default" ng-click="profileCard.onAddContactClick()">
-    Add Contact
+  <button type="button" class="btn btn-default add-card-button"
+          ng-click="profileCard.onAddContactClick()">
+    Add Card
   </button>
 </footer>

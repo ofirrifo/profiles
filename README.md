@@ -14,6 +14,13 @@ npm i -g npm
 ```
 npm i -g bower
 ```
+
+5. istanbul, mocha, babel, gulp-cli
+```
+npm i -g istanbul mocha babel gulp-cli
+```
+
+
 5. [mongodb](https://www.mongodb.com)
    
 

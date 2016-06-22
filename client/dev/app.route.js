@@ -2,7 +2,8 @@
   'use strict';
 
   ng.module('profiles')
-    .config(function ($routeProvider) {
+    .config(function ($routeProvider, $locationProvider) {
+
       $routeProvider
         .when('/', {
           templateUrl: 'profileCards/templates/profileCards.html',
@@ -17,5 +18,11 @@
         .otherwise({
           redirectTo: '/'
         });
+
+
+      $locationProvider.html5Mode({
+        enabled: false,
+        requireBase: true
+      });
     });
 }(window.angular));

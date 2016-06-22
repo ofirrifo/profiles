@@ -16,6 +16,7 @@
 
     vm.onLikeClick = function (card) {
       card.totalLikes += 1;
+      profileCardsRestService.updateProfile(card);
     };
 
     vm.onAddContactClick = function () {

@@ -7,6 +7,10 @@ module.exports = class ProfileRoutes {
     router
       .route('/api/profiles')
       .get(ProfilesController.getAll)
-      .post(ProfilesController.createProfile);   
+      .post(ProfilesController.createProfile);
+
+    router
+      .route('/api/profiles/:id')
+      .put(ProfilesController.updateProfile);
   }
 };

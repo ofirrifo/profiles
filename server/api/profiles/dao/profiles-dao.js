@@ -33,6 +33,20 @@ profileCardSchema.statics.createProfile = (profile) => {
   });
 };
 
+profileCardSchema.statics.updateProfile = (id, _profile) => {
+  return new Promise((resolve, reject) => {
+    if (!_.isString(id))
+      return reject(new TypeError('Id is not a valid string.'));
+
+    ProfileCard
+      .findByIdAndUpdate(id, _profile)
+      .exec((err, deleted) => {
+        err ? reject(err)
+          : resolve();
+      });
+  });
+};
+
 const ProfileCard = mongoose.model('ProfileCard', profileCardSchema);
 
 module.exports = ProfileCard;

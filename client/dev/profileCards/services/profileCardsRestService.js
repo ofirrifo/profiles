@@ -41,5 +41,21 @@
       });
     };
 
+    self.updateProfile = function (profile) {
+      return $http({
+        method: "PUT",
+        url: '/api/profiles/' + profile._id,
+        headers: {
+          'Accept': 'application/json;odata=verbose',
+          'content-type': 'application/json;odata=verbose'
+        },
+        data: profile
+      }).then(function successCallback(res) {
+        return res.data;
+      }, function errorCallback(error) {
+        console.log('server error');
+      });
+    };
+
   }
 })(window.angular);

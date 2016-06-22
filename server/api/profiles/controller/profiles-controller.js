@@ -19,4 +19,14 @@ module.exports = class ProfilesController {
       .then(todo => res.status(201).json(todo))
       .catch(error => res.status(400).json(error));
   }
+
+  static updateProfile(req, res) {
+    let _id = req.params.id;
+    let _profile = req.body;
+
+    ProfileDAO
+      .updateProfile(_id, _profile)
+      .then(() => res.status(200).end())
+      .catch(error => res.status(400).json(error));
+  }
 };

@@ -11,9 +11,9 @@ profileCardSchema.statics.getAll = () => {
 
     ProfileCard
       .find(_query)
-      .exec((err, todos) => {
+      .exec((err, profile) => {
         err ? reject(err)
-          : resolve(todos);
+          : resolve(profile);
       });
   });
 };

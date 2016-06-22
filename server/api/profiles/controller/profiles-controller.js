@@ -7,7 +7,7 @@ module.exports = class ProfilesController {
   static getAll(req, res) {
     ProfileDAO
       .getAll()
-      .then(todos => res.status(200).json(todos))
+      .then(profiles => res.status(200).json(profiles))
       .catch(error => res.status(400).json(error));
   }
 
@@ -16,7 +16,7 @@ module.exports = class ProfilesController {
 
     ProfileDAO
       .createProfile(_profile)
-      .then(todo => res.status(201).json(todo))
+      .then(profile => res.status(201).json(profile))
       .catch(error => res.status(400).json(error));
   }
 

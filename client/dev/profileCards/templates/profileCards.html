@@ -20,7 +20,7 @@
           <!--Inbox-->
           <a href="{{'#/inbox/' + card.id}}" class="list-group-item">
             <i class="glyphicon glyphicon-envelope"></i>
-            <em class="fa fa-fw fa-clock-o text-muted"></em>Inbox
+            Inbox
           </a>
 
           <!--Short Title-->
@@ -36,9 +36,10 @@
           <!--Number Of Friends-->
           <div class="list-group-item">
             <span class="label label-danger pull-right">{{::  card.numberOfFriends}}</span>
-            <em class="fa fa-fw fa-folder-open-o text-muted"></em>Friends
+            Friends
           </div>
 
+          <!--Like-->
           <div class="list-group-item card-like">
             <a ng-click="profileCard.onLikeClick(card)">
               <i class="glyphicon glyphicon-thumbs-up"></i>
